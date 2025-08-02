@@ -32,7 +32,7 @@ jobs:
     - name: Update .csproj with calculated version
       run: |
         VERSION=${{ steps.gitversion.outputs.nuGetVersionV2 }}
-        sed -i "s|<Version>.*</Version>|<Version>$VERSION</Version>|" DotnetSemverDemo.csproj
+        sed -i "s|<Version>.*</Version>|<Version>$VERSION</Version>|" dotnet-semver-demo.csproj
 
     - name: Build the project
       run: dotnet build -c Release
